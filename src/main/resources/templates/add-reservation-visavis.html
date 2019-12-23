@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Reservation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link  rel="stylesheet" th:href="@{/css/login.css}" type="text/css" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Add Reservation</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+			
+				<form th:action="@{/visavis/addreservationvisavis}" th:object="${reservation}" method="post">
+					
+					<input class="text email" th:field="*{numRes}" type="text" name="email" placeholder="Numero Reservation" required="">
+					<input class="text" th:field="*{dataRe}" type="date" name="password" placeholder="Date Reservation" required="" ><br><br>
+					<input class="text" th:field="*{visAvis.nom_v}" type="text" name="password" placeholder="Nom" required="" ><br>
+					<input class="text" th:field="*{visAvis.prenom_v}" type="text" name="password" placeholder="Prenom" required="" ><br>
+					<input class="text" th:field="*{visAvis.relation_v}" type="text" name="password" placeholder="Relation" required="" ><br>
+					<input class="text" th:field="*{visAvis.proffesion_v}" type="text" name="password" placeholder="Profession" required="" ><br>
+					
+					<input class="text" th:field="*{visAvis.etat_civil_v}" type="text" name="password" placeholder="Etat civil" required="" ><br>
+					 
+					
+					<div class="wthree-text">
+						<label class="anim">
+							
+						</label>
+						<div class="clear"> </div>
+					</div>
+					
+				 	<input type="submit" value="Add Reservation">	
+		
+				
+				</form >
+				
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>

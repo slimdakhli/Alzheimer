@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	  <th:block >
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css"  />
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<link rel="stylesheet" th:href="@{/css/navbar.css}" type="text/css"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+	 </th:block>
+</head>
+<body>
+<th:block >
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li><a href="/admin/listpatient"><i class="fas fa-home"></i>Gestion des patients</a></li>
+            <li><a href="/admin/listuser"><i class="fas fa-user"></i>Gestion des employés</a></li>
+            <li><a href="/admin/listactivite"><i class="fas fa-address-card"></i>Gestion des activités </a></li>
+            <li><a href="/admin/listsalleactivite"><i class="fas fa-project-diagram"></i>Gestion des salles</a></li>
+            <li><a href="/admin/listreservation"><i class="fas fa-blog"></i>Gestion des réservations</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content">
+        <div class="header"></div>  
+        <div class="info">
+          
+      </div>
+    </div>
+</div>
+
+ <style type="text/css">
+   #pos1{
+position: absolute;
+	top: 0%;
+	left: 0;
+	width:100%;
+	   }
+	   </style>
+
+ <div class="header" id="pos1">
+    <a href="/admin/logout" class="btn btn-primary">
+       <i class="fas fa-user-plus ml-2"> Logout</i></a>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Works</a>
+      <a href="#">Contact</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+
+
+<div class="content">
+   
+    </div>
+ </th:block>
+</body>
+
+</html>

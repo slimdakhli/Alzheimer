@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>proposer Activité</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link  rel="stylesheet" th:href="@{/css/login.css}" type="text/css" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Proposer Activité</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+			
+				<form th:action="@{/staffactivite/proactivite}" th:object="${activite}" method="post">
+					
+		<!-- 			<input class="text" th:field="*{nom}" type="text" name="email" placeholder="Nom" ><br>
+					<input class="text" th:field="*{ref_Act}" type="text" name="password" placeholder="Reférence activité" ><br>
+					 <span th:if="${#fields.hasErrors('prenom')}" th:errors="** {prenom}"></span>
+					<input class="text "  th:field="*{nature_Act}"  type="text" name="password" placeholder="Nature activité" ><br>
+					<input class="text "  th:field="*{salleActivite.numSalle}"  type="text" name="password" placeholder="Numero salle" ><br>	 -->
+					
+					<input class="text email" th:field="*{nom}" type="text" name="email" placeholder="Nom" required="">
+					<input class="text" th:field="*{ref_Act}" type="text" name="password" placeholder="Reférence activité" required=""><br>
+					
+					<input class="text "  th:field="*{nature_Act}"  type="text" name="password" placeholder="Nature activité" required=""><br>
+					<input class="text "  th:field="*{salleActivite.numSalle}"  type="text" name="password" placeholder="Numero salle" required=""><br>
+					
+					<div class="wthree-text">
+						<label class="anim">
+							
+						</label>
+						<div class="clear"> </div>
+					</div>
+					
+				 	<input type="submit" value="Add to Admin">	
+		
+				
+				</form >
+				
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			
+		</div>
+		<!-- //copyright -->	
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>

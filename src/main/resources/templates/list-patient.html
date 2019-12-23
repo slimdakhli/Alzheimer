@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Patient </title>
+
+					<th:block th:include="nav-side.html">
+<h1> yep admin</h1>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    
+    <style type="text/css">
+   #pos{
+	position: absolute;
+	top: 20%;
+	left: 17%;
+	width: 80%;
+	   }
+	   
+	   </style>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+<div id="pos" >
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+               <div th:switch="${patients}" class="container my-5"> 
+                    <p class="my-5">
+                        <a href="/admin/goaddpa" class="btn btn-primary"><i
+       class="fas fa-user-plus ml-2"> Add PATIENT</i></a>
+                    </p>
+                    <div class="col-md-10">
+                      
+                        <div id="pos2">
+                            <table class="table table-striped table-responsive-md">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Sexe</th>
+                                        <th>Profession</th>
+                                        <th>Etat Civil</th>
+                                        <th>Nombre d'enfant</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="patient : ${listPatient}">
+                                        <td th:text="${patient.nom}"></td>
+                                        <td th:text="${patient.prenom}"></td>
+                                        <td th:text="${patient.sexe}"></td>
+                                         <td th:text="${patient.profession}"></td>
+                                          <td th:text="${patient.etat_Civil}"></td>
+                                           <td th:text="${patient.nb_Enfant}"></td>
+                                       <td><a th:href="@{/admin/editpatient/{nom}(nom=${patient.nom})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                        <td><a th:href="@{/admin/deletepatient/{nom}(nom=${patient.nom})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>  
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+ <table class="table table-striped table-responsive-md">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>sexe</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="patient : ${listPatient}">
+                                        <td th:text="${patient.nom}"></td>
+                                        <td th:text="${patient.prenom}"></td>
+                                        <td th:text="${patient.sexe}"></td>
+                      <!--                   <td><a th:href="@{/admin/edituser/{login}(login=${user.login})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                        <td><a th:href="@{/admin/deleteuser/{login}(login=${user.login})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>  -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </body> 
+                            
+                            </html> 
+                         
+                             

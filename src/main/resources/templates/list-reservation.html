@@ -1,0 +1,97 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Reservation </title>
+
+					<th:block th:include="nav-side.html">
+<h1> yep admin</h1>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Reservation</title>
+    
+    <style type="text/css">
+   #pos{
+	position: absolute;
+	top: 20%;
+	left: 17%;
+	width: 80%;
+	   }
+	   
+	   </style>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+<div id="pos" >
+    <div class="container my-2">
+        <div class="card">
+            <div class="card-body">
+               <div th:switch="${reservations}" class="container my-5"> 
+                    <p class="my-5">
+                        <a href="/admin/goaddre" class="btn btn-primary"><i
+       class="fas fa-user-plus ml-2"> Add Reservation</i></a>
+                    </p>
+                    <div class="col-md-10">
+                      
+                        <div id="pos2">
+                            <table class="table table-striped table-responsive-md">
+                                <thead>
+                                    <tr>
+                                        <th>Numero reservation</th>
+                                        <th>Date reservation</th>
+                                        <th>Nom </th>
+                                        <th>Prenom </th>
+                                        <th>Relation</th>
+                                        <th>Proffesion</th>
+                                        <th>Etat Civil  </th>
+                                        
+                                       
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="reservation : ${listReservation}">
+                                        <td th:text="${reservation.numRes}"></td>
+                                        <td th:text="${reservation.dataRe}"></td>
+                                        <td th:text="${reservation.visAvis.nom_v}"></td>
+                                        <td th:text="${reservation.visAvis.prenom_v}"></td>
+                                        <td th:text="${reservation.visAvis.relation_v}"></td>
+                                        <td th:text="${reservation.visAvis.proffesion_v}"></td>
+                                        <td th:text="${reservation.visAvis.etat_civil_v}"></td>
+                                       <td><a th:href="@{/admin/editreservation/{numRes}(numRes=${reservation.numRes})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                        <td><a th:href="@{/admin/deletereservation/{numRes}(numRes=${reservation.numRes})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>  
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+
+</html>
+
+
+
+
+
+
+
+
